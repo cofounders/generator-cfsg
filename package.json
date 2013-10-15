@@ -1,12 +1,12 @@
 {
   "name": "generator-cfsg",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.0.1",
+  "description": "The Cofounders.sg frontend generator for Yeoman",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/cbas/generator-cfsg",
-  "bugs": "https://github.com/cbas/generator-cfsg/issues",
+  "homepage": "https://github.com/cofounders/generator-cfsg",
+  "bugs": "https://github.com/cofounders/generator-cfsg/issues",
   "author": {
     "name": "Sebastiaan Deckers",
     "email": "seb@ninja.sg",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cbas/generator-cfsg.git"
+    "url": "git://github.com/cofounders/generator-cfsg.git"
   },
   "scripts": {
     "test": "mocha"

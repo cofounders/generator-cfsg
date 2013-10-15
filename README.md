@@ -1,6 +1,6 @@
-# generator-cfsg [![Build Status](https://secure.travis-ci.org/cbas/generator-cfsg.png?branch=master)](https://travis-ci.org/cbas/generator-cfsg)
+# generator-cfsg [![Build Status](https://secure.travis-ci.org/cofounders/generator-cfsg.png?branch=master)](https://travis-ci.org/cofounders/generator-cfsg)
 
-A generator for [Yeoman](http://yeoman.io).
+The Cofounders.sg frontend generator for [Yeoman](http://yeoman.io).
 
 
 ## Getting Started
