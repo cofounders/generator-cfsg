@@ -1,4 +1,4 @@
-# My App
+# <%= _.escapeHTML(appname) %>
 
 ## The Build
 

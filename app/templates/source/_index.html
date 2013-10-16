@@ -2,10 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>My App</title>
+	<title><%= _.escapeHTML(appname) %></title>
 
-	<meta name="description" content="This app does not do much" />
-	<meta name="keywords" content="something, blah" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
 	<meta name="robots" content="INDEX,FOLLOW" />
 
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -22,11 +22,11 @@
 	<link rel="apple-touch-startup-image" href="/img/splash/splash-iphone4.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" sizes="640x920" />
 	<link rel="apple-touch-startup-image" href="/img/splash/splash-iphone5.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" sizes="640x1096" />
 
-	<meta property="og:title" content="My App" />
+	<meta property="og:title" content="<%= _.escapeHTML(appname) %>" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://www.example.com/" />
 	<meta property="og:image" content="/img/logo.png" />
-	<meta property="og:site_name" content="My App" />
+	<meta property="og:site_name" content="<%= _.escapeHTML(appname) %>" />
 	<meta property="fb:app_id" content="" />
 
 	<link rel="stylesheet" href="/styles/app.css" />
@@ -36,7 +36,7 @@
 <body id="app">
 	<section class="layout base loading">
 		<header>
-			<h1>Loading <b>My App</b>...</h1>
+			<h1>Loading <b><%= _.escapeHTML(appname) %></b>...</h1>
 		</header>
 	</section>
 </body>

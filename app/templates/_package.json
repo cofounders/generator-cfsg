@@ -1,5 +1,5 @@
 {
-	"name": "my-app",
+	"name": "<%= _.slugify(appname) %>",
 	"description": "",
 	"version": "0.0.0",
 	"homepage": "http://www.example.com/",
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:cofounders/my-app.git"
+		"url": "git@github.com:cofounders/<%= _.slugify(appname) %>.git"
 	},
 	"licenses": [{
 		"type": "All rights reserved"
