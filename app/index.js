@@ -1,13 +1,19 @@
 'use strict';
 var util = require('util');
-var path = require('path');
 var yeoman = require('yeoman-generator');
+
+var _ = require('underscore');
+var path = require('path');
 var fs = require('fs');
 
 var CfsgGenerator = module.exports = function CfsgGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.argument('appname', { type: String, required: false });
+
+  this.hookFor('cfsg:legal', {
+    args: args
+  });
 
   this.on('end', function () {
     this.installDependencies({
@@ -25,9 +31,6 @@ util.inherits(CfsgGenerator, yeoman.generators.Base);
 CfsgGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  // have Yeoman greet the user.
-  console.log(this.yeoman);
-
   var prompts = [];
 
   if (!this.appname) {
@@ -39,7 +42,7 @@ CfsgGenerator.prototype.askFor = function askFor() {
   }
 
   this.prompt(prompts, function (props) {
-    this.appname = props.appname || this.appname;
+    _.extend(this, props);
 
     cb();
   }.bind(this));
