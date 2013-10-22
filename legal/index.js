@@ -5,14 +5,12 @@ var yeoman = require('yeoman-generator');
 var _ = require('underscore');
 
 var LegalGenerator = module.exports = function LegalGenerator(args, options, config) {
-  // By calling `NamedBase` here, we get the argument to the subgenerator call
-  // as `this.name`.
   yeoman.generators.Base.apply(this, arguments);
 
   this.argument('license', { type: String, required: false });
 };
 
-util.inherits(LegalGenerator, yeoman.generators.NamedBase);
+util.inherits(LegalGenerator, yeoman.generators.Base);
 
 LegalGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
