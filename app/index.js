@@ -50,7 +50,7 @@ CfsgGenerator.prototype.askFor = function askFor() {
 
 CfsgGenerator.prototype.app = function app() {
   var sourceRoot = this.sourceRoot();
-  var sourceFiles = this.expand(path.join(sourceRoot, '**/*'));
+  var sourceFiles = this.expand(path.join(sourceRoot, '**/*'), {dot: true});
   var templatePrefix = '_';
   sourceFiles.forEach(function (sourcePath) {
     var relativePath = path.relative(sourceRoot, sourcePath);
