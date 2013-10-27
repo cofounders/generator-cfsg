@@ -7,7 +7,7 @@ _.mixin(require('underscore.string').exports());
 var path = require('path');
 var fs = require('fs');
 
-var ViewGenerator = module.exports = function ViewGenerator(args, options, config) {
+var MvcGenerator = module.exports = function MvcGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.argument('type', { type: String, required: false });
@@ -15,9 +15,9 @@ var ViewGenerator = module.exports = function ViewGenerator(args, options, confi
   this.argument('name', { type: String, required: false });
 };
 
-util.inherits(ViewGenerator, yeoman.generators.Base);
+util.inherits(MvcGenerator, yeoman.generators.Base);
 
-ViewGenerator.prototype.askFor = function askFor() {
+MvcGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   var prompts = [];
@@ -85,7 +85,7 @@ ViewGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-ViewGenerator.prototype.inject = function inject() {
+MvcGenerator.prototype.inject = function inject() {
   var module = this.read(path.resolve(this.module));
   var snippet = this.read(this.type.toLowerCase() + '.js');
   var rendered = _.template(snippet, this);
