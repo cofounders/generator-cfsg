@@ -36,7 +36,7 @@ MvcGenerator.prototype.askFor = function askFor() {
     var extractName = function (module) {
       var base = path.basename(module, '.js');
       return {
-        value: module,
+        value: base,
         name: _.titleize(_.humanize(base))
       };
     };
@@ -86,10 +86,64 @@ MvcGenerator.prototype.askFor = function askFor() {
 };
 
 MvcGenerator.prototype.inject = function inject() {
-  var module = this.read(path.resolve(this.module));
-  var snippet = this.read(this.type.toLowerCase() + '.js');
+  var destination = path.join(
+    this.destinationRoot(),
+    'source/js/modules',
+    this.module + '.js'
+  );
+  var module = this.read(path.resolve(destination));
+  var snippet = this.read(this.type + '.js');
   var rendered = _.template(snippet, this);
   var marker = module.lastIndexOf('\treturn');
   var output = _.insert(module, marker, rendered);
-  this.write(this.module, output);
+  this.write(destination, output);
+};
+
+MvcGenerator.prototype.setFilename = function setFilename() {
+  this.filename = _.slugify(_.humanize(this.module)) + '/'
+    + _.slugify(_.humanize(this.name));
+};
+
+MvcGenerator.prototype.handlebars = function handlebars() {
+  if (this.type === 'view') {
+    this.template(
+      'view.html',
+      'source/templates/' + this.filename + '.html'
+    );
+  }
+};
+
+MvcGenerator.prototype.stylus = function stylus() {
+  if (this.type === 'view') {
+    this.template(
+      'view.styl',
+      'source/styles/modules/' + this.filename + '.styl'
+    );
+  }
+};
+
+MvcGenerator.prototype.include = function include() {
+  if (this.type === 'view') {
+    var destination = path.join(
+      this.destinationRoot(),
+      'source/styles/app.styl'
+    );
+
+    var lines = _.lines(this.read(path.resolve(destination)));
+
+    var isIncluded = function (line) {
+      return line.toLowerCase().indexOf(this.filename.toLowerCase()) !== -1;
+    }.bind(this);
+
+    if (_.some(lines, isIncluded)) {
+      return;
+    }
+
+    if (lines[lines.length - 1] === '') {
+      lines.pop();
+    }
+    lines.push('@import ' + _.quote('modules/' + this.filename, '\''));
+    var output = lines.join('\n') + '\n';
+    this.write(destination, output);
+  }
 };
