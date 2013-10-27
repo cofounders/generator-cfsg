@@ -1,5 +1,5 @@
-	Views.<%= _.classify(view) %> = Views.Base.extend({
-		template: 'layouts/<%= _.underscored(view) %>',
+	Views.<%= _.classify(name) %> = Views.Base.extend({
+		template: 'layouts/<%= _.underscored(name) %>',
 		initialize: function (options) {
 			this.options = options;
 		},

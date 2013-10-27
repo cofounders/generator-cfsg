@@ -10,8 +10,9 @@ var fs = require('fs');
 var ViewGenerator = module.exports = function ViewGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
+  this.argument('type', { type: String, required: false });
   this.argument('module', { type: String, required: false });
-  this.argument('view', { type: String, required: false });
+  this.argument('name', { type: String, required: false });
 };
 
 util.inherits(ViewGenerator, yeoman.generators.Base);
@@ -47,17 +48,33 @@ ViewGenerator.prototype.askFor = function askFor() {
     prompts.push({
       type: 'list',
       name: 'module',
-      message: 'To which module do you want to add a view?',
+      message: 'Which module do you want to extend?',
       default: 'My Module',
       choices: modules
     });
   }
 
+  if (!this.type) {
+    prompts.push({
+      type: 'list',
+      name: 'type',
+      message: 'What do you want to create?',
+      default: 0,
+      choices: ['model', 'collection', 'view']
+        .map(function (label) {
+          return {
+            name: _.titleize(label),
+            value: label
+          };
+        })
+    });
+  }
+
   if (!this.name) {
     prompts.push({
-      name: 'view',
-      message: 'What is the name of this view?',
-      default: 'My View'
+      name: 'name',
+      message: 'What is the name of this extension?',
+      default: 'My Extension'
     });
   }
 
@@ -70,8 +87,8 @@ ViewGenerator.prototype.askFor = function askFor() {
 
 ViewGenerator.prototype.inject = function inject() {
   var module = this.read(path.resolve(this.module));
-  var view = this.read('view.js');
-  var rendered = _.template(view, this);
+  var snippet = this.read(this.type.toLowerCase() + '.js');
+  var rendered = _.template(snippet, this);
   var marker = module.lastIndexOf('\treturn');
   var output = _.insert(module, marker, rendered);
   this.write(this.module, output);
