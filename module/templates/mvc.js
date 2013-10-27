@@ -4,8 +4,6 @@ function ($, _, Backbone, app) {
 	var Collections = {};
 	var Views = {};
 
-	// Add models, collections, and views here
-
 	return {
 		Models: Models,
 		Collections: Collections,
