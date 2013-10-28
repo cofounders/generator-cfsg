@@ -1,0 +1,29 @@
+Description:
+    Adds a View, Model, or Collection to an app module
+
+Example:
+    yo cfsg:mvc
+
+    First choose the module you want to build on. Tip: Use the cfsg:module
+    generator to create a new module.
+
+    Then choose whether to create a new Model, Collection, or View, and give it a name.
+
+    Models
+    ======
+    Adds a JavaScript snippet to:
+        /source/js/modules/<ModuleName>.js
+
+    Collections
+    ===========
+    Adds a JavaScript snippet to:
+        /source/js/modules/<ModuleName>.js
+
+    Views
+    =====
+    Add a JavaScript snippet to:
+        /source/js/modules/<ModuleName>.js
+    Adds a Handlebars HTML template placeholder to:
+        /source/templates/<module-name>/<view-name>.html
+    Adds a Stylus CSS placeholder to:
+        /source/styles/modules/<module-name>/<view-name>.styl

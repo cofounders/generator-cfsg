@@ -1,0 +1,17 @@
+Description:
+    Creates an app using the Cofounders frontend stack
+
+Example:
+    yo cfsg
+
+    This will guide you through a few steps to describe the app. A full-blown
+    frontend stack will be generated. Ready to rock!
+
+    Warning: Be careful when running this in an existing project directory.
+    When in doubt, compare the difference between generated and existing files.
+
+    Once ready, run `npm start` to launch the app. To run in debug mode, run
+    `grunt dev`. To run all tests run `npm test`.
+
+    See `README.md` for additional information on getting started with the
+    Cofounders frontend stack.

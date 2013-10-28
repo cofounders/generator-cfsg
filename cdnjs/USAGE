@@ -1,0 +1,23 @@
+Description:
+    Adds an external CDNJS JavaScript or CSS dependency to the app
+
+Example:
+    yo cfsg:cdnjs
+
+    Enter an optional search query or leave blank to browse the full list of
+    libraries hosted on CDNJS.
+
+    Choose a version. Defaults to the latest version available.
+
+    Choose which JavaScript dependency to include. This configures RequireJS
+    to load the file from CDNJS, and exposes it in the app. A single file is
+    allowed.
+
+    Choose which CSS dependencies to import. The CSS file is linked from CDNJS,
+    not copied to our local project. This is typically better for client-side
+    performance and reduces hosting requirements. Multiple CSS files can be
+    imported.
+
+    Note: Shims are not automatically created. If the dependency does not
+    implement asynchronous module definitions (AMD), add a shim to:
+        /source/js/loader.js

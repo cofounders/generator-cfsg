@@ -1,0 +1,8 @@
+Description:
+    Changes the license under which this app is published
+
+Example:
+    yo cfsg:legal
+
+    A few licenses are included by default. To manually change the license,
+    edit the LICENSE file.

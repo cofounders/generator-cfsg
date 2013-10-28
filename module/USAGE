@@ -1,0 +1,24 @@
+Description:
+    Adds a module to the app
+
+Example:
+    yo cfsg:module
+
+    Modules are a pattern to group related views, models, and collections.
+
+    For example the Friends module would contain all JavaScript, Handlebars,
+    and Stylus code related to Friends data in the app.
+
+    Modules have a sensible directory structure:
+
+        /source/js/modules/<ModuleName>.js
+            JavaScript code for the module's models, views, and collections
+
+        /source/templates/<module-name>/<view-name>.html
+            Handlebars HTML templates for a module's views
+
+        /source/styles/modules/<module-name>/<view-name>.styl
+            Stylus CSS definitions for a module's views
+
+    Tip: Use the cfsg:mvc generator to add models, collections, or views to
+    existing modules.
