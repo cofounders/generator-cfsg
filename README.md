@@ -1,46 +1,100 @@
 # generator-cfsg [![Build Status](https://secure.travis-ci.org/cofounders/generator-cfsg.png?branch=master)](https://travis-ci.org/cofounders/generator-cfsg)
 
-The Cofounders.sg frontend generator for [Yeoman](http://yeoman.io).
+The Cofounders frontend stack generator for [Yeoman](http://yeoman.io).
 
 
-## Getting Started
+## Usage
 
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
+Install `generator-cfsg`:
 ```
-$ npm install -g yo
+npm install -g generator-cfsg
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-cfsg from npm, run:
-
+Make a new directory, and `cd` into it:
 ```
-$ npm install -g generator-cfsg
+mkdir my-new-project && cd $_
 ```
 
-Finally, initiate the generator:
-
+Run `yo cfsg`, optionally passing an app name:
 ```
-$ yo cfsg
+yo cfsg [app-name]
 ```
 
-### Getting To Know Yeoman
+## Generators
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+Available generators:
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+* [cfsg](#app) (aka [cfsg:app](#app))
+* [cfsg:module](#module)
+* [cfsg:mvc](#mvc)
+* [cfsg:cdnjs](#cdnjs)
+* [cfsg:legal](#legal)
 
+**Note: Generators are to be run from the root directory of your app.**
+
+### App
+Sets up a new app based on the Cofounders frontend stack, generating all the boilerplate you need to get started.
+
+Once done, run `npm start` to build and launch your brand new app.
+
+See [README.md](app/templates/_README.md) to learn the Cofounders frontend stack.
+
+Example:
+```bash
+yo cfsg
+```
+
+See: [app/USAGE](app/USAGE) or run `yo cfsg --help`
+
+### Module
+Adds a new module to the app by setting up a sensible directory structure.
+
+Modules try to balance between an unwieldy number of tiny snippets and huge monolithic files. They work best on mid- to large-scale projects.
+
+Example:
+```bash
+yo cfsg:module
+```
+
+See: [module/USAGE](module/USAGE) or run `yo cfsg:module --help`
+
+### MVC
+Adds a Backbone Model, View, or Controller to an app module. Injects code snippets and creates placeholders.
+
+Example:
+```bash
+yo cfsg:mvc
+```
+
+See: [mvc/USAGE](mvc/USAGE) or run `yo cfsg:mvc --help`
+
+### CDNJS
+Adds external dependencies to the app for resources hosted on [CDNJS](http://cdnjs.com/).
+
+Using external dependencies has several benefits:
+- Parallel client-side downloads
+- Shared caching across websites
+- Reduce hosting requirements (bandwidth) for the app
+- Faster builds by skipping external code
+
+Example:
+```bash
+yo cfsg:cdnjs
+```
+
+See: [cdnjs/USAGE](cdnjs/USAGE) or run `yo cfsg:cdnjs --help`
+
+### Legal
+Changes the license under which the app is published.
+
+Choose from a set of common open source licenses.
+
+Example:
+```bash
+yo cfsg:legal
+```
+
+See: [legal/USAGE](legal/USAGE) or run `yo cfsg:legal --help`
 
 ## License
 
