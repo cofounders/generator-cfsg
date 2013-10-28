@@ -29,8 +29,8 @@ CdnjsGenerator.prototype.search = function search() {
   if (!this.query) {
     prompts.push({
       name: 'query',
-      message: 'Search CDNJS:',
-      default: 'backbone.layoutmanager'
+      message: 'Search CDNJS (optional):',
+      default: ''
     });
   }
 
