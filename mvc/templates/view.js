@@ -1,4 +1,4 @@
-	Views.<%= _.classify(name) %> = Views.Base.extend({
+	Views.<%= _.classify(name) %> = Backbone.View.extend({
 		template: 'layouts/<%= _.underscored(name) %>',
 		initialize: function (options) {
 			this.options = options;
@@ -8,7 +8,9 @@
 		events: {
 		},
 		serialize: function () {
-			return this.model.toJSON();
+			return this.model ? this.model.toJSON() :
+                this.collection ? this.collection.toJSON() :
+                {};
 		},
 		beforeRender: function () {
 		},
