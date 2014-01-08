@@ -11,10 +11,6 @@ var CfsgGenerator = module.exports = function CfsgGenerator(args, options, confi
 
   this.argument('appname', { type: String, required: false });
 
-  this.hookFor('cfsg:legal', {
-    args: args
-  });
-
   this.on('end', function () {
     this.installDependencies({
       bower: false,
@@ -27,6 +23,12 @@ var CfsgGenerator = module.exports = function CfsgGenerator(args, options, confi
 };
 
 util.inherits(CfsgGenerator, yeoman.generators.Base);
+
+CfsgGenerator.prototype.chooseLicense = function chooseLicense() {
+  this.invoke('cfsg:legal', {
+    options: this.options
+  });
+};
 
 CfsgGenerator.prototype.askFor = function askFor() {
   var cb = this.async();

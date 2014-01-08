@@ -13,7 +13,8 @@ describe('cfsg generator', function () {
       }
 
       this.app = helpers.createGenerator('cfsg:app', [
-        '../../app'
+        '../../app',
+        '../../legal'
       ]);
       done();
     }.bind(this));
@@ -29,6 +30,7 @@ describe('cfsg generator', function () {
     helpers.mockPrompt(this.app, {
       'someOption': true
     });
+    this.app.options['license'] = 'none';
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
       helpers.assertFiles(expected);

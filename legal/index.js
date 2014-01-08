@@ -26,6 +26,10 @@ LegalGenerator.prototype.askFor = function askFor() {
     {value: 'none', name: 'Not specified'}
   ];
 
+  if (this.options.license) {
+    this.license = this.options.license;
+  }
+
   if (!this.license || !_.findWhere(licenses, {value: this.license})) {
     prompts.push({
         type: 'list',
