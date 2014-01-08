@@ -17,7 +17,10 @@ define([
 
 		constants: constants,
 
-		api: api('http://api.example.com/'),
+		api: api(localStorage.getItem('api') === null ?
+			'http://api.example.com/' :
+			localStorage.getItem('api')
+		),
 
 		useLayout: function (layout, options) {
 			options = options || {};
