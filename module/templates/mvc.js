@@ -1,5 +1,9 @@
-define(['jquery', 'underscore', 'backbone', 'app'],
-function ($, _, Backbone, app) {
+define([
+    'jquery', 'underscore', 'backbone', 'app'
+],
+function (
+    $, _, Backbone, app
+) {
 	var Models = {};
 	var Collections = {};
 	var Views = {};

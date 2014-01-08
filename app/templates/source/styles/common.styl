@@ -1,8 +1,26 @@
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-webkit-text-size-adjust 100%
+	-moz-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+	text-size-adjust 100%
+
 html, body
 	height 100%
+	overflow hidden
 
 body, button
 	font-family sans-serif
 	font-weight 400
 	font-size 16px
 	color #333333
+
+#app
+	display flex
+	min-height 100%
+	position relative
+
+#app > .layout
+	flex auto
