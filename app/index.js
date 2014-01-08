@@ -25,9 +25,11 @@ var CfsgGenerator = module.exports = function CfsgGenerator(args, options, confi
 util.inherits(CfsgGenerator, yeoman.generators.Base);
 
 CfsgGenerator.prototype.chooseLicense = function chooseLicense() {
+  var cb = this.async();
+
   this.invoke('cfsg:legal', {
     options: this.options
-  });
+  }, cb);
 };
 
 CfsgGenerator.prototype.askFor = function askFor() {
