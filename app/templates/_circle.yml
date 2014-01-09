@@ -1,0 +1,9 @@
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: <%= _.slugify(appname) %>-production
+  staging:
+    branch: develop
+    heroku:
+      appname: <%= _.slugify(appname) %>-staging

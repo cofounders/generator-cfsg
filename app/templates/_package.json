@@ -18,11 +18,11 @@
 		"test": "grunt test",
 		"start": "grunt prod"
 	},
-	"dependencies": {},
-	"devDependencies": {
+	"dependencies": {
 		"grunt": "0.4.1",
+		"grunt-cli": "0.1.11",
 		"grunt-contrib-clean": "0.4.0",
-		"grunt-contrib-connect": "0.2.0",
+		"grunt-contrib-connect": "0.6.0",
 		"grunt-contrib-copy": "0.4.0",
 		"grunt-contrib-cssmin": "0.5.0",
 		"grunt-contrib-handlebars": "0.5.9",
@@ -39,9 +39,11 @@
 		"grunt-usemin": "0.1.11",
 		"backbone": "*",
 		"handlebars": "1.0.11",
-		"load-grunt-config": "0.5.0",
+		"load-grunt-config": "0.7.0",
 		"requirejs": "*",
 		"underscore": "*"
+	},
+	"devDependencies": {
 	},
 	"engines": {
 		"node": "0.10.1",
