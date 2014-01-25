@@ -10,7 +10,8 @@ module.exports = {
 				'js/**',
 				'styles/**',
 				'img/**',
-				'templates/**'
+				'templates/**',
+				'bower_components/**'
 			]
 		}]
 	},
