@@ -13,7 +13,7 @@ var CfsgGenerator = module.exports = function CfsgGenerator(args, options, confi
 
   this.on('end', function () {
     this.installDependencies({
-      bower: false,
+      bower: true,
       npm: true,
       skipInstall: options['skip-install']
     });
