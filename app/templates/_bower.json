@@ -1,6 +1,7 @@
 {
 	"name": "<%= _.slugify(appname) %>",
 	"dependencies": {
+		"backbone-loading": "*",
 		"urlbuilder": "*"
 	}
 }

@@ -8,6 +8,7 @@ require.config({
 		jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min',
 		'backbone.layoutmanager': '//cdnjs.cloudflare.com/ajax/libs/backbone.layoutmanager/0.8.8/backbone.layoutmanager.min',
 		underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min',
+		'backbone-loading': '../bower_components/backbone-loading/backbone-loading',
 		'urlbuilder': '../bower_components/urlbuilder/urlbuilder'
 	},
 	shim: {

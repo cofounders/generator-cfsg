@@ -4,7 +4,9 @@ define(
 	'app',
 	'router',
 	'templates.built',
-	'modules/Session/Base'
+	'modules/Session/Base',
+
+	'backbone-loading'
 ],
 function (
 	$, _, Handlebars, Backbone,
