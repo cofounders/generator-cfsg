@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/grunt default connect:production:keepalive
+web: npm install -g bower && bower install && grunt default connect:production:keepalive
