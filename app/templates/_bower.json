@@ -2,6 +2,7 @@
 	"name": "<%= _.slugify(appname) %>",
 	"dependencies": {
 		"backbone-loading": "*",
+		"handlebars-helpers-pack": "*",
 		"urlbuilder": "*"
 	}
 }

@@ -1,7 +1,7 @@
 define([
 	'handlebars',
-	'helpers/currency',
-	'helpers/encodeURIComponent'
+	'handlebars-helpers-pack/currency',
+	'handlebars-helpers-pack/encodeURIComponent'
 ], function (
 	Handlebars,
 	currency,
