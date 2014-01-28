@@ -1,5 +1,5 @@
 	Views.<%= _.classify(name) %> = Backbone.View.extend({
-		template: 'layouts/<%= _.underscored(name) %>',
+		template: 'layouts/<%= _.slugify(_.humanize(name)) %>',
 		initialize: function (options) {
 			this.options = options;
 		},
