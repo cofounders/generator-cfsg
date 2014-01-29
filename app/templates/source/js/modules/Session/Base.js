@@ -31,7 +31,7 @@ function (_, Backbone) {
 				break;
 			}
 			if (_.isFunction(options.success)) {
-				options.success(this, response);
+				options.success(response);
 			}
 		},
 		signIn: function (options) {
