@@ -25,7 +25,7 @@ module.exports = {
 				'robots.txt',
 				'js/*.loader.js',
 				'styles/*.app.css',
-				'img/**/*.{jpg,jpeg,gif,png,ico,webp}'
+				'img/**/*.{jpg,jpeg,gif,png,ico,webp,svg}'
 			]
 		}]
 	}
