@@ -9,8 +9,8 @@
 		},
 		serialize: function () {
 			return this.model ? this.model.toJSON() :
-                this.collection ? this.collection.toJSON() :
-                {};
+				this.collection ? this.collection.toJSON() :
+				{};
 		},
 		beforeRender: function () {
 		},

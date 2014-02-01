@@ -1,8 +1,8 @@
 define([
-    'jquery', 'underscore', 'backbone', 'app'
+	'jquery', 'underscore', 'backbone', 'app'
 ],
 function (
-    $, _, Backbone, app
+	$, _, Backbone, app
 ) {
 	var Models = {};
 	var Collections = {};

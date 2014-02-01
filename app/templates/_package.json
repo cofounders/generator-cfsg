@@ -36,6 +36,7 @@
 		"grunt-contrib-watch": "0.3.1",
 		"grunt-bower-task": "0.3.4",
 		"grunt-ghost": "1.0.10",
+		"grunt-lintspaces": "0.3.1",
 		"grunt-open": "0.2.2",
 		"grunt-rev": "0.1.0",
 		"grunt-usemin": "0.1.11",
