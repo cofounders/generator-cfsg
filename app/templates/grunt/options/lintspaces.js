@@ -7,7 +7,7 @@ module.exports = {
 			'source/js/**/*.js',
 			'source/styles/**/*.styl',
 			'source/templates/**/*.html'
-		],
+		]
 	},
 	tests: {
 		src: [
