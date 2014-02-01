@@ -53,3 +53,5 @@
 [Nginx](server/apache/server.conf)
 
 [Apache2](server/apache/server.conf)
+
+[Heroku](server/heroku/instructions.md)
