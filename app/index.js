@@ -3,6 +3,7 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 
 var _ = require('underscore');
+_.mixin(require('underscore.string').exports());
 var path = require('path');
 var fs = require('fs');
 
@@ -57,6 +58,7 @@ CfsgGenerator.prototype.app = function app() {
   var sourceFiles = this.expand(path.join(sourceRoot, '**/*'), {dot: true});
   var templatePrefix = '_';
   sourceFiles.forEach(function (sourcePath) {
+    var destination;
     var relativePath = path.relative(sourceRoot, sourcePath);
     var stats = fs.statSync(sourcePath);
     if (stats.isDirectory()) {
@@ -64,13 +66,18 @@ CfsgGenerator.prototype.app = function app() {
     } else {
       var fileName = path.basename(relativePath);
       if (fileName.charAt(0) === templatePrefix) {
-        var destination = path.join(
+        destination = path.join(
           path.dirname(relativePath),
           path.basename(relativePath).substr(1)
         );
         this.template(relativePath, destination);
       } else {
-        this.copy(relativePath, relativePath);
+        if (relativePath === '.sublime-project') {
+          destination = _.classify(this.appname) + relativePath;
+        } else {
+          destination = relativePath;
+        }
+        this.copy(relativePath, destination);
       }
     }
   }.bind(this));
