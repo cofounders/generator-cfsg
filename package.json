@@ -1,6 +1,6 @@
 {
   "name": "generator-cfsg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Cofounders.sg frontend generator for Yeoman",
   "keywords": [
     "yeoman-generator"
