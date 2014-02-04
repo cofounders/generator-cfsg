@@ -64,7 +64,7 @@ EditorconfigGenerator.prototype.fix = function fix() {
       fixed.pop();
     }
 
-    if (config.insert_final_newline === 'true') {
+    if (config.insert_final_newline === true) {
       fixed.push('');
     }
 
