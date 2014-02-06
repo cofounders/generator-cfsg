@@ -4,7 +4,8 @@
 
 1. Install [Node.js & NPM](http://nodejs.org/)
 1. Install [Grunt.js](https://github.com/gruntjs/grunt/wiki/Getting-started)
-1. Run `npm install` to fetch all dependencies.
+1. Run `npm install` to fetch all build dependencies.
+1. Run `bower install` to fetch the front end dependencies.
 1. Run `npm start` to build a production version of the app.
 
 ## Running the App
@@ -30,6 +31,7 @@
 | --- | --- |--- | --- |
 | Watch | Auto-build on file changes | :white_check_mark: | :no_entry_sign: |
 | JSHint | Coding style compliance | :white_check_mark: | :white_check_mark: |
+| EditorConfig | Indentation and line endings | :white_check_mark: | :white_check_mark: |
 | Stylus | Compile CSS | :white_check_mark: | :white_check_mark: |
 | Handlebars | Compile templates | :no_entry_sign: | :white_check_mark: |
 | HTML Minifier | Reduce HTML size | :no_entry_sign: | :white_check_mark: |
