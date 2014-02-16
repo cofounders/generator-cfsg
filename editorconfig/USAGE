@@ -1,0 +1,7 @@
+Description:
+    Reformats indentation and line endings in all files to follow Editorconfig
+    settings. Edit the settings in ".editorconfig". For documentation visit:
+    http://editorconfig.org
+
+Example:
+    yo cfsg:editorconfig

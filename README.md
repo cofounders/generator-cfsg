@@ -29,6 +29,7 @@ Available generators:
 * [cfsg:mvc](#mvc)
 * [cfsg:cdnjs](#cdnjs)
 * [cfsg:legal](#legal)
+* [cfsg:editorconfig](#editorconfig)
 
 **Note: Generators are to be run from the root directory of your app.**
 
@@ -95,6 +96,22 @@ yo cfsg:legal
 ```
 
 See: [legal/USAGE](legal/USAGE) or run `yo cfsg:legal --help`
+
+### EditorConfig
+Utility to help keep the project coding style consistent.
+- Re-indents with hard tabs or soft tabs (spaces)
+- Changes indentation width: number of spaces
+- Fixes line separators (Unix/Windows)
+- Adds or trims the trailing new line
+
+**Warning:** Measure twice cut once.
+
+Example:
+```bash
+yo cfsg:editorconfig
+```
+
+See: [editorconfig/USAGE](editorconfig/USAGE) or run `yo cfsg:editorconfig --help`
 
 ## License
 
