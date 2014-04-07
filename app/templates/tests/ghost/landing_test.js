@@ -21,7 +21,7 @@ casper.on('resource.received', function (resource) {
 	}
 });
 
-casper.waitForSelector('#app > *.layout:not(.loading)');
+casper.waitForSelector('#app > *.layouts:not(.loading)');
 
 casper.then(function () {
 	this.test.assertExists(
