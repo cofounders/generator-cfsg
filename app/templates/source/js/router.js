@@ -1,8 +1,10 @@
 define([
 	'jquery', 'underscore', 'backbone', 'app',
+	'backbone.analytics',
 	'modules/Layouts'
 ], function (
 	$, _, Backbone, app,
+	bbAnalytics,
 	Layouts
 ) {
 	return Backbone.Router.extend({

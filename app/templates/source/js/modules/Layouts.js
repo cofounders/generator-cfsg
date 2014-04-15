@@ -11,10 +11,12 @@ function ($, _, Backbone, app) {
 	});
 
 	Views.Landing = Views.Base.extend({
+		title: '',
 		template: 'layouts/landing'
 	});
 
 	Views['404'] = Views.Base.extend({
+		title: 'Not Found',
 		template: 'layouts/404'
 	});
 

@@ -2,12 +2,16 @@ define([
 	'jquery', 'underscore', 'backbone',
 	'backbone.layoutmanager',
 	'libs/api',
-	'constants'
+	'constants',
+	'env',
+	'doctit'
 ], function (
 	$, _, Backbone,
 	LayoutManager,
 	api,
-	constants
+	constants,
+	env,
+	doctit
 ) {
 	var app = _.extend({
 
@@ -15,12 +19,16 @@ define([
 
 		root: '/',
 
+		env: env,
+
 		constants: constants,
 
 		api: api(localStorage.getItem('api') === null ?
-			'http://api.example.com/' :
+			env.api.base :
 			localStorage.getItem('api')
 		),
+
+		title: doctit,
 
 		useLayout: function (layout, options) {
 			options = options || {};
@@ -46,6 +54,10 @@ define([
 				}
 				this.layout = new Constructor(options);
 				$(app.el).empty().append(this.layout.el);
+			}
+
+			if (typeof this.layout.title === 'string') {
+				app.title.message = this.layout.title;
 			}
 
 			return this.layout;

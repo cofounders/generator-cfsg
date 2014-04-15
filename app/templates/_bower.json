@@ -3,6 +3,9 @@
 	"dependencies": {
 		"backbone-loading": "*",
 		"handlebars-helpers-pack": "*",
-		"urlbuilder": "*"
+		"urlbuilder": "*",
+		"doctit": "*",
+		"backbone.analytics": "*",
+		"googletagmanager": "*"
 	}
 }

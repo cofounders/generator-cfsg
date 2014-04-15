@@ -5,7 +5,8 @@ define(
 	'router',
 	'templates.built',
 	'modules/Session/Base',
-
+	'googletagmanager',
+	'fastclick',
 	'backbone-loading'
 ],
 function (
@@ -13,7 +14,10 @@ function (
 	app,
 	Router,
 	templatesBuilt,
-	Session
+	Session,
+	googletagmanager,
+	FastClick,
+	bbLoading
 ) {
 	var JST = window.JST = _.extend(window.JST || {}, templatesBuilt);
 
@@ -35,6 +39,12 @@ function (
 		}
 	});
 
+	$(function() {
+		FastClick.attach(document.body);
+	});
+
+	app.title.sitename = document.title;
+
 	app.router = new Router();
 
 	app.session = new Session();
@@ -46,6 +56,8 @@ function (
 		pushState: true,
 		root: app.root
 	});
+
+	googletagmanager(app.env.googletagmanager.id);
 
 	$(document).ajaxError(function (event, request, settings, exception) {
 		if (+request.status === 403 && settings.url.indexOf(app.api) !== -1) {
